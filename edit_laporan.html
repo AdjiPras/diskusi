@@ -1,0 +1,50 @@
+{% include 'header.html' %}
+    <div class="container-fluid">
+      <div class="row mt-3">
+        <div class="col-lg-8" style="margin: auto;">
+          <div class="card">
+            <div class="card-body" style="background-color: aliceblue; border-radius: 7px;">
+              <p type="button" class="btn btn-block" style="color: aliceblue; background-color: steelblue;">Form Edit Laporan</p>
+              <form role="form" action="{{ url_for('update_lp') }}" method="POST">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="username" style="color: darkslategray;">Username</label>
+                    <input type="text" readonly=readonly style="background-color: white; color: darkslategray; border: 3px solid steelblue; border-radius: 10px; width:100%; padding: 20px;" id="username" name="username" value="{{ data_lp[1] }}">
+                  </div>
+                  <div class="form-group">
+                    <label for="text_laporan" style="color: darkslategray;">Laporan</label>
+                    <textarea readonly style="background-color: white; color: darkslategray; border: 3px solid steelblue; border-radius: 10px; width:100%; padding: 20px;" id="text_laporan" name="text_laporan" rows="5" value="">{{ data_lp[2] }}</textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="tanggal_lapor" style="color: darkslategray;">Time</label><br>
+                    <input type="datetime-local" style="background-color: white; color: darkslategray; border: 3px solid steelblue; border-radius: 10px; min-width:30%; padding: 20px;" id="tanggal_lapor" name="tanggal_lapor" value="{{ data_lp[3] }}">
+                  </div>
+                  {% if data_nama[2] == 0 %}
+                  <div class="form-group col-md-14">
+                    <label for="status" style="color: darkslategray;">Status</label><br>
+                    <select style="background-color: white; color: darkslategray; border: 3px solid steelblue; border-radius: 10px; min-width:30%; padding: 20px;" id="status" name="status" value="{{ data_lp[4] }}">
+                      <option style="background-color: white; color: darkslategray;" value=""></option>
+                      <option style="background-color: white; color: darkslategray;" value="Diterima">Diterima</option>
+                      <option style="background-color: white; color: darkslategray;" value="Proses">Proses</option>
+                      <option style="background-color: white; color: darkslategray;" value="Selesai">Selesai</option>
+                    </select>
+                  </div>
+                  {% endif %}
+                  <div class="form-group">
+                    <input type="hidden" class="form-control" id="no" name="no" value="{{ data_lp[0] }}">
+                  </div>
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-dark btn-sm">Save</button>
+                  <input TYPE="button" class="btn btn-danger btn-sm" style="width: 80px;"  VALUE="Cancel" onClick="history.go(-1);">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<!--End Row-->
+{% include 'footer.html' %}

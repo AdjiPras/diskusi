@@ -1,0 +1,84 @@
+{% include 'header.html' %}
+      <p type="button" class="btn btn-block">
+        {% if data_nama[2] == 0 %}
+        <!-- <a href="{{ url_for('insert_pertanyaan') }}" type="button" class="btn btn-success btn-sm" style="margin-left: 45px; width: 130px; margin-top: 5px; ">Tambah Pertanyaan</a><br> -->
+        {% endif %}
+        <input TYPE="button" class="btn btn-light btn-sm" style="margin-top: 5px; margin: auto; width: 60px;"  VALUE="Back" onClick="history.go(-1);">
+        <p type="button" class="btn btn-block" style="color: #343a40; background-color: white; margin: auto;">Tabel Rekap Data</p>
+      </p>
+      <!-- <p type="button" class="btn btn-block"  style="width: 60%; margin: auto; color: aliceblue; font-family: system-ui; margin-bottom: 10px; font-size: 15px;"><b>Tabel Data Pertanyaan</b></p> -->
+      <div class="col-lg-14"style="margin: auto;">
+        <div class="card"  style="background-color: #343a40; border-radius: 7px; border: 4px solid #B0C4DE;">
+          <div class="card-body">
+            <div class="table-responsive">
+              <table id="example" class="table dt-responsive nowrap">
+                <thead>
+                  <tr style="text-align: center; color: aliceblue;">
+                    <th>No</th>
+                    <th>Username</th>
+                    <th>Kategori</th>
+                    <th>Pertanyaan</th>
+                    <th>Penjawab</th>
+                    <th>Jawaban</th>
+                    <th>Time</th>
+                    <th>Ranking</th>
+                    <th>Catatan</th>
+                    <th>Action</th>
+                    <th colspan="2">Koreksi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% set no=namespace(value=1) %}
+                  {% for row in container_pertanyaan %}
+                  <tr style=" color: aliceblue;">
+                    <td style="text-align: center;">{{ no.value }}</td>
+                    {% set no.value=no.value+1 %}
+                    <td>{{ row[1] }}</td>
+                    <td style="text-align: center;">{{ row[2] }}</td>
+                    <td>
+                      <div>
+                        <textarea readonly  style="width: 380px; height: 180px; color: white; background-color: #343a40; border: 3px solid	#B0C4DE; border-radius: 7px; padding: 20px;">{{ row[3] }}</textarea>
+                      </div>
+                    </td>
+                    <td style="text-align: center;">{{ row[4] }}</td>
+                    <td>
+                      <div>
+                        <textarea readonly  style="width: 380px; height: 180px; color: white; background-color: #343a40; border: 3px solid	#B0C4DE; border-radius: 7px; padding: 20px;">{{ row[5] }}</textarea>
+                      </div>
+                    </td>
+                    <td style="text-align: center;">{{ row[6] }}</td>
+                    <td style="text-align: center;">{{ row[7] }}</td>
+                    <td>
+                      <div>
+                        <textarea readonly  style="width: 380px; height: 180px; color: white; background-color: #343a40; border: 3px solid	#B0C4DE; border-radius: 7px; padding: 20px;">{{ row[8] }}</textarea>
+                      </div>
+                    </td>
+                    {% if data_nama[2] == 0 %}
+                    <td style="text-align: center;">{{ row[9] }}<a href="{{ url_for('answer', no = row[0]) }}" class="btn btn-success btn-sm" role="button">Jawab</a><br>
+                      <a href="{{ url_for('delete_pertanyaan', no = row[0]) }}" class="btn btn-dark btn-sm" role="button" style="margin-top: 3px;">Hapus</a></td>
+                    <td style="text-align: center;">{{ row[10] }}<a href="{{ url_for('koreksi_pertanyaan', no = row[0]) }}" class="btn btn-warning btn-sm" role="button">Koreksi</a></td>
+                    {% endif %}
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+	  <!--start overlay-->
+		  <div class="overlay toggle-menu"></div>
+		<!--end overlay-->
+
+    </div>
+    <!-- End container-fluid-->
+    
+    </div><!--End content-wrapper-->
+   <!--Start Back To Top Button-->
+    <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
+    <!--End Back To Top Button-->
+	
+{% include 'footer.html' %}

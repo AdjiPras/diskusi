@@ -1,0 +1,50 @@
+{% include 'header.html' %}
+<!-- <p type="button" class="btn btn-block">
+  <input TYPE="button" class="btn btn-dark btn-sm" style="margin-top: 3px; margin-left: 45px;  width: 60px;"  VALUE="Back" onClick="history.go(-1);">
+</p> -->
+<div class="row mt-3">
+  <div class="col-lg-8" style="margin: auto;">
+    <div class="card">
+      <div class="card-body" style="background-color: aliceblue; border-radius: 7px;">
+        <p type="button" class="btn btn-block" style="color: aliceblue; background-color: steelblue;">Form Tambah Pengguna</p>
+        <form role="form" action="{{ url_for('insert_freelancer') }}" method="POST">
+          <div class="card-body">
+            <div class="form-group">
+              <label for="id_freelancer"  style="color: darkslategray; margin-left: 8px;">ID Freelancer</label><br>
+              <input type="text" style="background-color: white; color: darkslategray; border: 3px solid steelblue; border-radius: 10px; width:20%; padding: 20px;" id="id_freelancer" name="id_freelancer" placeholder="Masukkan Nomor ID...">
+            </div>
+            <div class="form-group">
+              <label for="username"  style="color: darkslategray; margin-left: 8px;">Username</label>
+              <input type="text" style="background-color: white; color: darkslategray; border: 3px solid steelblue; border-radius: 10px; width:100%; padding: 20px;" id="username" name="username" placeholder="Masukkan Username...">
+            </div>
+            <div class="form-group">
+              <label for="password" style="color: darkslategray; margin-left: 8px;">Password</label>
+              <input type="text" style="background-color: white; color: darkslategray; border: 3px solid steelblue; border-radius: 10px; width:100%; padding: 20px;" id="password" name="password" placeholder="Masukkan Password...">
+            </div>
+            <div class="form-group">
+              <label for="nama" style="color: darkslategray; margin-left: 8px;">Nama</label>
+              <input type="text" style="background-color: white; color: darkslategray; border: 3px solid steelblue; border-radius: 10px; width:100%; padding: 20px;" id="nama" name="nama" placeholder="Masukkan Nama...">
+            </div>
+            <div class="form-group">
+              <label for="kategori" style="color: darkslategray; margin-left: 8px;">Tipe Akses</label><br>
+              <select style="background-color: white; color: darkslategray; border: 3px solid steelblue; border-radius: 10px; max-width:30%; padding: 20px;" id="tipe_akses" name="tipe_akses">
+                <option style="background-color: white; color: darkslategray;" value=""></option>
+                {% if data_nama[2] == 0 %}
+                <option style="background-color: white; color: darkslategray;" value="Admin">Admin</option>
+                {% endif %}
+                <option style="background-color: white; color: darkslategray;" value="Freelencer">Freelencer</option>
+              </select>
+            </div>
+          </div>
+          <!-- /.card-body -->
+
+          <div class="card-footer">
+            <button type="submit" class="btn btn-success btn-sm">Add</button>
+            <input TYPE="button" class="btn btn-danger btn-sm" style=" width: 80px;"  VALUE="Cancel" onClick="history.go(-1);">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% include 'footer.html' %}

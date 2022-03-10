@@ -1,0 +1,45 @@
+{% include 'header.html' %}
+    <div class="container-fluid">
+      <div class="row mt-3">
+        <div class="col-lg-8" style="margin: auto;">
+          <div class="card">
+            <div class="card-body" style="background-color: aliceblue; border-radius: 7px;">
+              <p type="button" class="btn btn-block" style="color: aliceblue; background-color: steelblue;">Tambah Laporan</p>
+              <form role="form" action="{{ url_for('insert_laporan') }}" method="POST">
+                <div class="card-body">
+                  <input type="hidden" name="no" class="form-control">
+                  <input type="hidden" name="username" value="{{ data_nama[1] }}" class="form-control">
+                  <div class="form-group">
+                    <label for="text_laporan" style="color: darkslategray;">Laporan</label>
+                    <textarea style="background-color: white; color: darkslategray; border: 3px solid steelblue; border-radius: 10px; width:100%; padding: 20px;" id="text_laporan" name="text_laporan" rows="3" placeholder="Tambahkan Laporan Anda..."></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="tanggal_lapor" style="color: darkslategray;">Time</label><br>
+                    <input type="datetime-local" style="background-color: white; color: darkslategray; border: 3px solid steelblue; border-radius: 10px; min-width:30%; padding: 20px;" id="tanggal_lapor" name="tanggal_lapor" placeholder="Masukkan Tanggal Lapor...">
+                  </div>
+                  {% if data_nama[2] == 0 %}
+                  <div class="form-group col-md-14">
+                    <label for="status" style="color: darkslategray;">Status</label><br>
+                    <select id="status" style="background-color: white; color: darkslategray; border: 3px solid steelblue; border-radius: 10px; min-width:30%; padding: 20px;" name="status" placeholder="">
+                      <option style="background-color: white; color: darkslategray;" value=""></option>
+                      <option style="background-color: white; color: darkslategray;" value="Diterima">Diterima</option>
+                      <option style="background-color: white; color: darkslategray;" value="Proses">Proses</option>
+                      <option style="background-color: white; color: darkslategray;" value="Selesai">Selesai</option>
+                    </select>
+                  </div>
+                  {% endif %}
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-dark btn-sm">Add</button>
+                  <input TYPE="button" class="btn btn-danger btn-sm" style=" width: 80px;"  VALUE="Cancel" onClick="history.go(-1);">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!--End Row-->
+{% include 'footer.html' %}

@@ -1,0 +1,153 @@
+{% include 'header.html' %}
+  <!-- Content Wrapper. Contains page content -->
+  <div>
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2" style="padding: 30px;">
+          <div class="col-sm-14" style=" padding: 5px; margin: auto;">
+            <div>
+              <p type="button" class="btn btn-block" style="width: 50%; margin: auto; color: white; font-family: system-ui; font-size: 25px;">Selamat Datang {{ data_nama[1] }}</p><br>
+            </div>
+              <!-- KATEGORI -->
+            <div id="flip">  
+              <p type="button" class="btn btn-block" style="width: 50%; font-family: system-ui; font-size: 17px; color: darkslategray; border-radius:20px; background-color:	aliceblue; padding: 7px; margin: auto;">
+                BUSINESS CATEGORY<br>
+                <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
+              </p>
+              <div id="panel">
+                <div class="responsive">
+                  <div class="gallery">
+                    <a href="{{ url_for('makanan') }}">
+                      <img src="{{ url_for('static', filename='assets/images/makanan.png')}}">
+                    </a>
+                    <div class="desc">Makanan</div>
+                  </div>
+                </div>
+                <div class="responsive">
+                  <div class="gallery">
+                    <a href="{{ url_for('minuman') }}">
+                      <img src="{{ url_for('static', filename='assets/images/minuman.png')}}">
+                    </a>
+                    <div class="desc">Minuman</div>
+                  </div>
+                </div>
+                <div class="responsive">
+                  <div class="gallery">
+                    <a href="{{ url_for('pakaian') }}">
+                      <img src="{{ url_for('static', filename='assets/images/pakaian.png')}}">
+                    </a>
+                    <div class="desc">Pakaian</div>
+                  </div>
+                </div>
+                <div class="responsive">
+                  <div class="gallery">
+                    <a href="{{ url_for('desain') }}">
+                      <img src="{{ url_for('static', filename='assets/images/desain.png')}}">
+                    </a>
+                    <div class="desc">Desain</div>
+                  </div>
+                </div>
+                <div class="responsive">
+                  <div class="gallery">
+                    <a href="{{ url_for('manufaktur') }}">
+                      <img src="{{ url_for('static', filename='assets/images/manufaktur.png')}}">
+                    </a>
+                    <div class="desc">Manufaktur</div>
+                  </div>
+                </div>
+                <div class="responsive">
+                  <div class="gallery">
+                    <a href="{{ url_for('teknologi') }}">
+                      <img src="{{ url_for('static', filename='assets/images/teknologi.png')}}">
+                    </a>
+                    <div class="desc">Teknologi</div>
+                  </div>
+                </div>
+                <div class="responsive">
+                  <div class="gallery">
+                    <a href="{{ url_for('pariwisata') }}">
+                      <img src="{{ url_for('static', filename='assets/images/pariwisata.png')}}">
+                    </a>
+                    <div class="desc">Pariwisata</div>
+                  </div>
+                </div>
+                <div class="responsive">
+                  <div class="gallery">
+                    <a href="{{ url_for('transport') }}">
+                      <img src="{{ url_for('static', filename='assets/images/transport.png')}}">
+                    </a>
+                    <div class="desc">Transport</div>
+                  </div>
+                </div>
+                <div class="responsive">
+                  <div class="gallery">
+                    <a href="{{ url_for('onlineshop') }}">
+                      <img src="{{ url_for('static', filename='assets/images/online shop.png')}}">
+                    </a>
+                    <div class="desc">Online Shop</div>
+                  </div>
+                </div>
+                <div class="responsive">
+                  <div class="gallery">
+                    <a href="{{ url_for('periklanan') }}">
+                      <img src="{{ url_for('static', filename='assets/images/ads.png')}}">
+                    </a>
+                    <div class="desc">Periklanan</div>
+                  </div>
+                </div>
+                <div class="responsive">
+                  <div class="gallery">
+                    <a href="{{ url_for('artikelseo') }}">
+                      <img src="{{ url_for('static', filename='assets/images/artikel seo.png')}}">
+                    </a>
+                    <div class="desc">Artikel SEO</div>
+                  </div>
+                </div>
+                <div class="responsive">
+                  <div class="gallery">
+                    <a href="{{ url_for('semua') }}">
+                      <img src="{{ url_for('static', filename='assets/images/beranda.png')}}">
+                    </a>
+                    <div class="desc">Semua</div>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+            <hr>
+             <div style="margin: auto;">
+              <div style="float: left; margin-top: 100px;">
+                <img src="{{ url_for('static', filename='assets/images/Logo-panjang-white.png')}}" style="width: 495px; height: 270px; margin-bottom: 20px;">
+              </div>
+              <div style="float: right; margin-top: 100px;">
+                <img src="{{ url_for('static', filename='assets/images/meeting2.gif')}}" style="width: 465px; height: 400px; margin-right: 50px; margin-bottom: 20px;">
+              </div>
+            </div>
+          </div>
+          <div style="float: right;">
+            
+          </div>
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+      <div class="card-footer" style="margin-top: 30px; text-align: center;">
+        <a href="http://localhost:5000/" style="color:	aliceblue; font-size: 12px;  text-align: center;"><b>Home</b></a> | <a href="https://kampungwirausaha.com" style="color:	#00BFFF; font-size: 12px; text-align: center;"><b>Kampung Wirausaha</b></a><br>
+        <!-- <p style="font-size: 9px; color: aliceblue;  text-align: center;">AdjiPras . 2022</p> -->
+      </div>
+    </div>
+    <!-- /.content-header -->
+    <!-- Main content -->
+    <section class="content">
+      <!-- <div class="container-fluid">
+        <div style="margin-top: 50px; margin: auto;">
+          <a href="{{ url_for('insert_pertanyaan') }}" type="button" class="btn btn-info">Silahkan Bertanya</a>
+        </div>
+      </div> -->
+      <!-- /.container-fluid -->
+      <!-- Carousel wrapper -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+      
+{% include 'footer.html' %}

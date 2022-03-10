@@ -1,0 +1,184 @@
+{% include 'header.html' %}
+        <!-- KATEGORI -->
+        <div id="flip">  
+          <p type="button" class="btn btn-block" style="font-family: system-ui; font-size: 17px; color: aliceblue; border-radius: 20px;  margin: auto;">
+            BUSINESS CATEGORY<br>
+            <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
+          </p>
+          <div id="panel">
+            <div class="responsive">
+              <div class="gallery">
+                <a href="{{ url_for('makanan') }}">
+                  <img src="{{ url_for('static', filename='assets/images/makanan.png')}}">
+                  <div class="desc">Makanan</div>
+                </a>
+              </div>
+            </div>
+            <div class="responsive">
+              <div class="gallery">
+                <a href="{{ url_for('minuman') }}">
+                  <img src="{{ url_for('static', filename='assets/images/minuman.png')}}">  
+                  <div class="desc">Minuman</div>
+                </a>
+              </div>
+            </div>
+            <div class="responsive">
+              <div class="gallery">
+                <a href="{{ url_for('pakaian') }}">
+                  <img src="{{ url_for('static', filename='assets/images/pakaian.png')}}">
+                  <div class="desc">Pakaian</div>
+                </a>
+              </div>
+            </div>
+            <div class="responsive">
+              <div class="gallery">
+                <a href="{{ url_for('desain') }}">
+                  <img src="{{ url_for('static', filename='assets/images/desain.png')}}">
+                  <div class="desc">Desain</div>
+                </a>
+              </div>
+            </div>
+            <div class="responsive">
+              <div class="gallery">
+                <a href="{{ url_for('manufaktur') }}">
+                  <img src="{{ url_for('static', filename='assets/images/manufaktur.png')}}">
+                  <div class="desc">Manufaktur</div>
+                </a>
+              </div>
+            </div>
+            <div class="responsive">
+              <div class="gallery">
+                <a href="{{ url_for('teknologi') }}">
+                  <img src="{{ url_for('static', filename='assets/images/teknologi.png')}}">
+                  <div class="desc">Teknologi</div>
+                </a>
+              </div>
+            </div>
+            <div class="responsive">
+              <div class="gallery">
+                <a href="{{ url_for('pariwisata') }}">
+                  <img src="{{ url_for('static', filename='assets/images/pariwisata.png')}}">
+                  <div class="desc">Pariwisata</div>
+                </a>
+              </div>
+            </div>
+            <div class="responsive">
+              <div class="gallery">
+                <a href="{{ url_for('transport') }}">
+                  <img src="{{ url_for('static', filename='assets/images/transport.png')}}">
+                  <div class="desc">Transport</div>
+                </a>
+              </div>
+            </div>
+            <div class="responsive">
+              <div class="gallery">
+                <a href="{{ url_for('onlineshop') }}">
+                  <img src="{{ url_for('static', filename='assets/images/online shop.png')}}">
+                  <div class="desc">Online Shop</div>
+                </a>
+              </div>
+            </div>
+            <div class="responsive">
+              <div class="gallery">
+                <a href="{{ url_for('periklanan') }}">
+                  <img src="{{ url_for('static', filename='assets/images/ads.png')}}">
+                  <div class="desc">Periklanan</div>
+                </a>
+              </div>
+            </div>
+            <div class="responsive">
+              <div class="gallery">
+                <a href="{{ url_for('artikelseo') }}">
+                  <img src="{{ url_for('static', filename='assets/images/artikel seo.png')}}">
+                  <div class="desc">Artikel SEO</div>
+                </a>
+              </div>
+            </div>
+            <div class="responsive">
+              <div class="gallery">
+                <a href="{{ url_for('semua') }}">
+                  <img src="{{ url_for('static', filename='assets/images/beranda.png')}}">
+                  <div class="desc">Semua</div>
+                </a>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+        <hr>
+        <p type="button" class="btn btn-block" style="width: 100%; font-size: 17px; color: darkslategray; background-color:	#FFD700; margin: auto;">Notes: Kerjakan soal yang BELUM memiliki jawaban. </p>
+        <!-- NAVBAR MENU -->
+        <p type="button" class="btn btn-block">
+          <a href="{{ url_for('insert_pertanyaan') }}" type="button" class="btn btn-info btn-sm" style="color: darkslategray; border-radius: 20px; margin-left: 20px; width: 130px; margin-bottom: 3px;">Ajukan Pertanyaan</a><br>
+          <a type="button" class="btn btn-sm" style="margin-left: 20px; width: 240px;  color: aliceblue; background-color: #343a40; font-size: 17px; font-family: system-ui;">Kategori Transport</a><br>
+          <!-- <input TYPE="button" class="btn btn-dark btn-sm" style="margin-top: 3px; margin-left: 20px;  width: 60px;"  VALUE="Back" onClick="history.go(-1);"> -->
+        </p>
+        {% for row in container_transport %}
+        <div class="col-lg-8" style="margin: auto;">
+          <div class="card" style="background-color: aliceblue; border-radius: 20px; ">
+            <div class="card-body">
+              <div class="table-responsive">
+                <table>
+                  <tr>
+                    <a class="btn btn-light btn-sm" style="color: darkslategray; font-family: system-ui; font-size: 12px;" role="button"><b>{{ row[1] }}</b></a> <a class="btn btn-light btn-sm" role="button" style="margin-left: 10px; color: darkslategray;  font-size: 12px;"><b>{{ row[2] }}</b></a> <a class="btn btn-light btn-sm" role="button" style=" font-size: 12px; margin-left: 10px; color: darkslategray;"><b>{{ row[6] }}</b></a>
+                  </tr>
+                </table>
+                <hr color="#DCDCDC">
+                <div>
+                  <p class="btn btn-light btn-sm" style="color: darkslategray; margin-left: 8px; font-family: Roboto;">PERTANYAAN</p><br>
+                  <textarea readonly style=" color: darkslategray;  font-family: Roboto; width: 100%; height: 100px; border: 3px solid  steelblue; border-radius: 7px; padding: 15px; background-color: rgba(255, 255, 255, 0.7);">{{ row[3] }}</textarea>
+                </div>
+                <div>
+                  <p class="btn btn-light btn-sm" style="color: darkslategray; margin-left: 8px; font-family: Roboto;">JAWABAN</p><br>
+                  <textarea readonly="readonly" style=" color: darkslategray;  font-family: Roboto; width: 100%; height: 100px; border: 3px solid  steelblue; border-radius: 7px; padding: 15px; background-color: rgba(255, 255, 255, 0.7);">{{ row[5] }}</textarea>
+                </div>
+                <div style="float: right;">
+                  <a style="margin-left: 8px;" href="{{ url_for('answer', no = row[0]) }}" class="btn btn-success btn-sm" role="button">Jawab</a>
+                  {% if data_nama[2] == 0 %}
+                  <a href="{{ url_for('koreksi_pertanyaan', no = row[0]) }}" class="btn btn-dark btn-sm" role="button">Koreksi</a>
+                  <a href="{{ url_for('delete_pertanyaan', no = row[0]) }}" class="btn btn-danger btn-sm" role="button">Hapus</a>
+                  {% endif %}
+                </div><br>
+
+                <table style="margin-left: 8px; margin-top: 5px;">
+                  <tr>
+                    <td class="btn btn-light btn-sm" style=" color: darkslategray;  font-family: Roboto;">PENJAWAB</td><br>
+                  </tr>
+                  <tr>
+                    <td class="btn btn-sm" style="color: aliceblue; background-color: #3CB371;  font-family: Roboto; margin-top: 7px;" role="button">{{ row[4] }}</td>
+                  </tr>
+                </table>
+                <table style="margin-left: 8px;">
+                  <tr>
+                    <td class="btn btn-light btn-sm" style=" color: darkslategray;  font-family: Roboto;">STATUS</td><br>
+                  </tr>
+                  <tr>
+                    <td class="btn btn-sm" style="color: aliceblue; background-color: #3CB371;  font-family: Roboto;  margin-top: 7px;" role="button">{{ row[7] }}</td>
+                  </tr>
+                </table>
+                <div style="margin-top: 10px;">
+                  <p class="btn btn-light btn-sm" style="color: darkslategray; margin-left: 8px;  font-family: Roboto;  margin-top: 15px;">CATATAN ADMIN</p><br>
+                  <textarea readonly style=" color: darkslategray;  font-family: Roboto; width: 100%; height: 60px; border: 3px solid steelblue; border-radius: 7px; padding: 15px; background-color: rgba(255, 255, 255, 0.7);">{{ row[8] }}</textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <!--End Row-->
+    </div>
+
+    <!--start overlay-->
+      <div class="overlay toggle-menu"></div>
+    <!--end overlay-->
+
+    </div>
+    <!-- End container-fluid-->
+    
+    </div><!--End content-wrapper-->
+   <!--Start Back To Top Button-->
+    <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
+    <!--End Back To Top Button-->
+  
+{% include 'footer.html' %}

@@ -1,0 +1,59 @@
+{% include 'header.html' %}
+      <p type="button" class="btn btn-block">
+        <a href="{{ url_for('insert_freelancer') }}" type="button" class="btn btn-success btn-sm" style="margin-left: 45px; width: 130px; margin: auto; margin-bottom: 5px;">Tambah Pengguna</a><br>
+        <!-- <input TYPE="button" class="btn btn-dark btn-sm" style="margin-top: 3px; margin-left: 45px;  width: 60px;"  VALUE="Back" onClick="history.go(-1);"> -->
+        <a href="{{ url_for('semua') }}" type="button" class="btn btn-light btn-sm" style="margin-left: 45px; margin-top: 5px; width: 60px; margin: auto;">Back</a><br>
+        <p type="button" class="btn btn-block" style="color: #343a40; background-color: white;">Tabel Data Pengguna</p>
+      </p>
+      <div class="col-lg-9" style="margin: auto;">
+        <div class="card" style="background-color: #343a40; border-radius: 7px; border: 4px solid #B0C4DE;">
+          <div class="card-body">
+            <div class="table-responsive">
+                <table id="example" class="table dt-responsive nowrap">
+                  <thead>
+                    <tr style="text-align: center;  color: white;">
+                      <th><b>No</b></th>
+                      <th><b>ID Pengguna</b></th>
+                      <th><b>Username</b></th>
+                      <th><b>Password</b></th>
+                      <th><b>Nama</b></th>
+                      <th><b>Tipe Akses</b></th>
+                      <th colspan="2"><b>Action</b></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% set no=namespace(value=1) %}
+                    {% for row in container_freelancer %}
+                    <tr style="text-align: center; color: white;">
+                      <td>{{ no.value }}</td>
+                      {% set no.value=no.value+1 %}
+                      <td>{{ row[0] }}</td>
+                      <td>{{ row[1] }}</td>
+                      <td>{{ row[2] }}</td>
+                      <td>{{ row[3] }}</td>
+                      <td>{{ row[4] }}</td>
+                      <td colspan="2">{{ row[5] }}<a href="{{ url_for('update_freelancer', id_freelancer = row[0]) }}" class="btn btn-warning btn-sm" role="button">Ubah</a><br>
+                        {{ row[6] }}<a href="{{ url_for('delete_freelancer', id_freelancer = row[0]) }}" class="btn btn-danger btn-sm" role="button" style="margin-top: 3px;">Hapus</a></td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--End Row-->
+
+
+	  <!--start overlay-->
+		  <div class="overlay toggle-menu"></div>
+		<!--end overlay-->
+
+    </div>
+    <!-- End container-fluid-->
+    
+    </div><!--End content-wrapper-->
+   <!--Start Back To Top Button-->
+    <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
+    <!--End Back To Top Button-->
+{% include 'footer.html' %}

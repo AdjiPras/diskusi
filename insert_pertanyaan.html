@@ -1,0 +1,59 @@
+{% include 'header.html' %}
+<!-- <p type="button" class="btn btn-block">
+  <input TYPE="button" class="btn btn-dark btn-sm" style="margin-top: 3px; margin-left: 45px;  width: 60px;"  VALUE="Back" onClick="history.go(-1);">
+</p> -->
+<div class="row mt-3">
+  <div class="col-lg-8" style="margin: auto;">
+    <div class="card">
+      <div class="card-body" style="background-color: aliceblue; border-radius: 7px;">
+        <p type="button" class="btn btn-block" style="color: aliceblue; background-color:	steelblue; padding: 10px;">Silahkan Bertanya</p>
+            <form role="form" action="{{ url_for('insert_pertanyaan') }}" method="POST">
+              <div class="card-body">
+                <input type="hidden" name="no" class="form-control">
+                <input type="hidden" class="form-control" id="username" name="username" value="{{ data_nama[1] }}">
+                <div class="form-group">
+                  <label for="kategori" style="color: darkslategray; margin-left: 8px;"><b>Kategori</b></label><br>
+                  <select style="background-color: white; color: darkslategray; border: 3px solid steelblue; border-radius: 10px; min-width:30%; padding: 20px;" id="kategori" name="kategori" placeholder="Masukkan kategori...">
+                    <option style="background-color: white; color: darkslategray;" value=""></option>
+                    <option style="background-color: white; color: darkslategray;" value="Makanan">Makanan</option>
+                    <option style="background-color: white; color: darkslategray;" value="Minuman">Minuman</option>
+                    <option style="background-color: white; color: darkslategray;" value="Transport">Transport</option>
+                    <option style="background-color: white; color: darkslategray;" value="Manufaktur">Manufaktur</option>
+                    <option style="background-color: white; color: darkslategray;" value="Pakaian">Pakaian</option>
+                    <option style="background-color: white; color: darkslategray;" value="Desain">Desain</option>
+                    <option style="background-color: white; color: darkslategray;" value="Pariwisata">Pariwisata</option>
+                    <option style="background-color: white; color: darkslategray;" value="Teknologi">Teknologi</option>
+                    <option style="background-color: white; color: darkslategray;" value="Online Shop">Online Shop</option>
+                    <option style="background-color: white; color: darkslategray;" value="Periklanan">Periklanan</option>
+                    <option style="background-color: white; color: darkslategray;" value="Artikel SEO">Artikel SEO</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="pertanyaan" style="color: darkslategray; margin-left: 8px;"><b>Pertanyaan</b></label>
+                  <textarea style="background-color: white; color: darkslategray; border: 3px solid steelblue; border-radius: 10px; width:100%; padding: 20px;" id="pertanyaan" name="pertanyaan" rows="5" placeholder=""></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="tanggal_jawab" style="color: darkslategray; margin-left: 8px;"><b>Time</b></label><br>
+                  <input type="datetime-local" style="background-color: white; color: darkslategray; border: 3px solid steelblue; border-radius: 10px; min-width:30%; padding: 20px;" id="tanggal_jawab" name="tanggal_jawab">
+                </div>
+                {% if data_nama[2] == 0 %}
+                <input type="hidden" readonly=readonly style="background-color: white; color: darkslategray; border: 3px solid steelblue; border-radius: 10px; width:100%; padding: 20px;" id="penjawab" name="penjawab" placeholder="-">
+                <input type="hidden" style="background-color: white; color: darkslategray; border: 3px solid steelblue; border-radius: 10px; width:100%; padding: 20px;" readonly=readonly id="jawaban" name="jawaban" rows="5" placeholder="-"></input>
+                <input type="hidden" style="background-color: white; color: darkslategray; border: 3px solid steelblue; border-radius: 10px; width:100%; padding: 20px;" readonly=readonly id="keterangan" name="keterangan" rows="3" placeholder=""></input>
+                {% endif %}
+              </div>
+              <!-- /.card-body -->
+
+              <div class="card-footer">
+                <button type="submit" class="btn btn-dark btn-sm">Add</button>
+                <input TYPE="button" class="btn btn-danger btn-sm" style=" width: 80px;"  VALUE="Cancel" onClick="history.go(-1);">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--End Row-->
+{% include 'footer.html' %}
+

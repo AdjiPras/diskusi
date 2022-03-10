@@ -1,0 +1,54 @@
+{% include 'header.html' %}
+      <p type="button" class="btn btn-block">
+        <a href="{{ url_for('semua') }}" type="button" class="btn btn-dark btn-sm" style="margin-left: 45px; width: 60px;">Back</a><br>
+        <!-- <input TYPE="button" class="btn btn-dark btn-sm" style="margin-top: 3px; margin-left: 45px;  width: 60px;"  VALUE="Back" onClick="history.go(-1);"> -->
+        <p type="button" class="btn btn-block" style="color: #343a40; background-color: white; margin: auto;">Tabel Rekap Jawaban Terverifikasi</p>
+      </p>
+      <div class="col-lg-9" style="margin: auto;">
+        <div class="card">
+          <div class="card-body">
+            <div>
+              <table id="example" class="table dt-responsive nowrap">
+                <thead>
+                  <tr style="text-align: center;  color: white;">
+                    <th><b>No</b></th>
+                    <th><b>Penjawab</b></th>
+                    <th><b>Status</b></th>
+                    <th><b>Jawaban</b></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% set no=namespace(value=1) %}
+                  {% for row in container_rekap %}
+                  <tr style="color: white;">
+                    <td style="text-align: center;">{{ no.value }}</td>
+                    {% set no.value=no.value+1 %}
+                    <td style="text-align: center;">{{ row[1] }}</td>
+                    <td style="text-align: center;">{{ row[2] }}</td>
+                    <td>
+                      <div style="text-align: center;">
+                        <textarea readonly style="width: 380px; height: 180px; color: white; background-color: #343a40; border: 3px solid	#B0C4DE; border-radius: 7px; padding: 20px;">{{ row[3] }}</textarea>
+                      </div>
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody> 
+              </table>
+            </div>
+          </div>
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+      </div><!-- /.container-fluid -->
+      <!-- <div class="img-fluid">
+        <img src="{{ url_for('static', filename='dist/img/kampung-wirausaha2.png')}}" border="0" style="margin-left: 50px; margin-top:10px; max-width: 100%; height: auto;">
+      <div> -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+{% include 'footer.html' %}

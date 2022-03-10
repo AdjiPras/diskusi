@@ -1,0 +1,82 @@
+{% include 'header.html' %}
+      <p type="button" class="btn btn-block">
+        <a href="{{ url_for('semua') }}" type="button" class="btn btn-light  btn-sm" style="margin-left: 45px; width: 60px; margin: auto;">Back</a><br>
+        <!-- <input TYPE="button" class="btn btn-dark btn-sm" style="margin-top: 3px; margin-left: 45px;  width: 60px;"  VALUE="Back" onClick="history.go(-1);"> -->
+      </p>
+      <div class="col-lg-12" style="margin: auto; font-size: 17px;">
+        <div class="card">
+          <div class="card-body">
+            <h2 type="button" class="btn btn-block" style="font-family: system-ui; font-size: 25px; background-color: aliceblue; margin: auto;">SOP (Standard Operating Procedure) untuk menjawab pertanyaan.</h2><br>
+            <div>
+                <p type="button" class="btn btn-block" width="50%"style="color: aliceblue; background-color: #343a40;">Sumber Pertanyaan</p>
+                    <ul style="margin-left: 10px;">
+                        <li><b>https://kampungwirausaha.com/diskusi/</b></li>
+                        <li>Jika ada penggantian sumber soal, admin akan memberikan informasinya melalui halaman tersebut.</li>
+                        <li>Cantumkan hashtag <b>#BelajarWirausaha</b> pada bagian akhir setiap jawaban.</li>
+                    </ul>
+                </p>
+            </div>
+            <div>
+                <p type="button" class="btn btn-block" width="50%" style="color: aliceblue; background-color: #343a40;">Peraturan (Freelancer)<br>
+                    <ul style="margin-left: 10px;">
+                        <li>Melakukan pendaftaran dan mendapatkan username, password.</li>
+                        <li>Pastikan memiliki smartphone atau PC atau Laptop.</li>
+                        <li>Carilah soal pada link: <b>https://kampungwirausaha.com/diskusi/</b> , lalu klik tombol "lanjut".</li>
+                        <li><b>Dilarang</b> mengganti atau menghapus jawaban yang sudah ada. Akan tetapi diperbolehkan untuk nambahkan jawaban lain pada soal yang dituju.</li>
+                        <li><b>Wajib</b> menjawab dengan format yang sudah ditentukan. </li>
+                        <li><b>FEE PENGERJAAN:</b>
+                          <ul style="color: aliceblue; margin-top: 3px; padding: 10px; border: 3px solid aliceblue; border-radius: 7px; width: 260px; max-width: 40%;">
+                            <p><b>$ 0.4</b> (100 kata / lebih)</p>
+                            <p><b>$ 0.5</b> (200 kata / lebih)</p>
+                            <p><b>$ 0.7</b> (300 kata / lebih)</p>
+                          </ul>
+                        </li>
+                        <li><b>Dilarang</b> melakukan copy-paste dari jawaban sendiri di link soal lain. Selalu usahakan untuk memparafrase kalimat ketika menjawab pertanyaan yang mirip dengan soal lain yang sudah pernah dijawab.</li>
+                        <li>Sebelum jawaban dikirimkan pastikan jawaban tidak terdeteksi plagiasi. <b>Maksimal terdeteksi plagiasi 25%</b> menggunakan tools <b>https://smallseotools.com/id/plagiarism-checker/ .</b> Jika terdeteksi plagiasi lebih dari 25% jawaban tidak akan dihitung.</li>
+                        <li>Jawaban tidak sesuai dengan tema soal atau <b>“asal jawab”</b>, Admin berhak menghapus jawaban dari daftar jawaban pada sistem tersebut.</li>
+                        <li>Setelah menjawab salin link ke dalam spreadsheet (link spreadsheet)</li>
+                        <li>Admin berhak melakukan pengecekan apabila terdapat jawaban yang tidak sesuai. <i>Seperti, kesalahan format, terdapat kalimat atau simbol-simbol yang tidak sesuai dengan tema soal, dan sebagainya.</i></li>
+                        <li>Jawaban <b>“tidak sesuai dengan konteks soal”</b> tidak dihitung.</li>
+                        <li><b>Admin berhak</b> melakukan pengecekan apabila terdapat jawaban yang tidak sesuai. <i>Seperti, kesalahan format, terdapat kalimat atau symbol-simbol yang tidak sesuai dengan tema soal, dan sebagainya.</i></li>
+                        <li>Apabila mendapatkan kebingungan dapat melaporakan melalui menu <b>Laporan</b> pada sistem.</li>
+                        <li>Admin berhak melakukan pengecekan apabila terdapat jawaban yang tidak sesuai. <i>Seperti, kesalahan format, terdapat kalimat atau symbol-simbol yang tidak sesuai dengan tema soal, dan sebagainya.</i></li>
+                        <li>Pencairan dilakukan seminggu setelah 30 hari proses menjawab pertanyaan.  </li>
+                    </ul>               
+                </p>
+            </div>
+            <div>
+                <p type="button" class="btn btn-block" width="50%" style="color: aliceblue; background-color: #343a40;">Format Pengerjaan<br>
+                    <div style="margin-left: 10px;">
+                        <img src="{{ url_for('static', filename='assets/images/format.jpg' ) }}" style="border-radius: 7px; margin-left: 20px; width: 250px; height: auto;">
+                    </div>
+                    <ul style="margin-left: 10px;">
+                        <li>Jawaban tidak terlalu singkat, akan tetapi sesuai dengan pertanyaan yang ditanyakan.</li>
+                        <li>Diakhir jawaban diberikan hashtag #BelajarWirausaha</li>
+                    </ul>               
+                </p>
+            </div>
+            <div>
+                <p type="button" class="btn btn-block" width="50%" style="color: aliceblue; background-color: #343a40;">Perekrutan Freelance<br>
+                    <ul style="margin-left: 10px;">
+                        <li>Mengirimkan CV ke email kami. kampung-wirausaha.gmail.com</li>
+                        <li>Apabila sudah diterima akan masuk ke dalam tim Freelance dan mendapatkan Username dan Password untuk login ke dalam sistem.  </li>
+                    </ul>               
+                </p>
+            </div>
+          </div>
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+      </div><!-- /.container-fluid -->
+      <!-- <div class="img-fluid">
+        <img src="{{ url_for('static', filename='dist/img/kampung-wirausaha2.png')}}" border="0" style="margin-left: 50px; margin-top:10px; max-width: 100%; height: auto;">
+      <div> -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+{% include 'footer.html' %}
